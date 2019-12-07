@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import csv;
 
 bad_keywords = ["is overdue",
