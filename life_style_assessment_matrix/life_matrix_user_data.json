@@ -1,0 +1,252 @@
+[
+    {
+        "user_id": "1",
+        "psychometric_test_score": "",
+        "social_media_score": [
+            {
+                "facebook": "",
+                "twitter": "",
+                "linkdln": ""
+            }
+        ],
+        "browsing_history": [
+            {
+                "type_of_site": "",
+                "time_spent": "",
+                "frequency_of_visit": ""
+            }
+        ],
+        "app_history": [
+            {
+                "type_of_site": "",
+                "time_spent": "",
+                "frequency_of_visit": ""
+            }
+        ]
+    },
+    {
+        "user_id": "2",
+        "psychometric_test_score": "",
+        "social_media_score": [
+            {
+                "facebook": "",
+                "twitter": "",
+                "linkdln": ""
+            }
+        ],
+        "browsing_history": [
+            {
+                "type_of_site": "",
+                "time_spent": "",
+                "frequency_of_visit": ""
+            }
+        ],
+        "app_history": [
+            {
+                "type_of_site": "",
+                "time_spent": "",
+                "frequency_of_visit": ""
+            }
+        ]
+    },
+    {
+        "user_id": "3",
+        "psychometric_test_score": "",
+        "social_media_score": [
+            {
+                "facebook": "",
+                "twitter": "",
+                "linkdln": ""
+            }
+        ],
+        "browsing_history": [
+            {
+                "type_of_site": "",
+                "time_spent": "",
+                "frequency_of_visit": ""
+            }
+        ],
+        "app_history": [
+            {
+                "type_of_site": "",
+                "time_spent": "",
+                "frequency_of_visit": ""
+            }
+        ]
+    },
+    {
+        "user_id": "4",
+        "psychometric_test_score": "",
+        "social_media_score": [
+            {
+                "facebook": "",
+                "twitter": "",
+                "linkdln": ""
+            }
+        ],
+        "browsing_history": [
+            {
+                "type_of_site": "",
+                "time_spent": "",
+                "frequency_of_visit": ""
+            }
+        ],
+        "app_history": [
+            {
+                "type_of_site": "",
+                "time_spent": "",
+                "frequency_of_visit": ""
+            }
+        ]
+    },
+    {
+        "user_id": "5",
+        "psychometric_test_score": "",
+        "social_media_score": [
+            {
+                "facebook": "",
+                "twitter": "",
+                "linkdln": ""
+            }
+        ],
+        "browsing_history": [
+            {
+                "type_of_site": "",
+                "time_spent": "",
+                "frequency_of_visit": ""
+            }
+        ],
+        "app_history": [
+            {
+                "type_of_site": "",
+                "time_spent": "",
+                "frequency_of_visit": ""
+            }
+        ]
+    },
+    {
+        "user_id": "6",
+        "psychometric_test_score": "",
+        "social_media_score": [
+            {
+                "facebook": "",
+                "twitter": "",
+                "linkdln": ""
+            }
+        ],
+        "browsing_history": [
+            {
+                "type_of_site": "",
+                "time_spent": "",
+                "frequency_of_visit": ""
+            }
+        ],
+        "app_history": [
+            {
+                "type_of_site": "",
+                "time_spent": "",
+                "frequency_of_visit": ""
+            }
+        ]
+    },
+    {
+        "user_id": "7",
+        "psychometric_test_score": "",
+        "social_media_score": [
+            {
+                "facebook": "",
+                "twitter": "",
+                "linkdln": ""
+            }
+        ],
+        "browsing_history": [
+            {
+                "type_of_site": "",
+                "time_spent": "",
+                "frequency_of_visit": ""
+            }
+        ],
+        "app_history": [
+            {
+                "type_of_site": "",
+                "time_spent": "",
+                "frequency_of_visit": ""
+            }
+        ]
+    },
+    {
+        "user_id": "8",
+        "psychometric_test_score": "",
+        "social_media_score": [
+            {
+                "facebook": "",
+                "twitter": "",
+                "linkdln": ""
+            }
+        ],
+        "browsing_history": [
+            {
+                "type_of_site": "",
+                "time_spent": "",
+                "frequency_of_visit": ""
+            }
+        ],
+        "app_history": [
+            {
+                "type_of_site": "",
+                "time_spent": "",
+                "frequency_of_visit": ""
+            }
+        ]
+    },
+    {
+        "user_id": "9",
+        "psychometric_test_score": "",
+        "social_media_score": [
+            {
+                "facebook": "",
+                "twitter": "",
+                "linkdln": ""
+            }
+        ],
+        "browsing_history": [
+            {
+                "type_of_site": "",
+                "time_spent": "",
+                "frequency_of_visit": ""
+            }
+        ],
+        "app_history": [
+            {
+                "type_of_site": "",
+                "time_spent": "",
+                "frequency_of_visit": ""
+            }
+        ]
+    },
+    {
+        "user_id": "10",
+        "psychometric_test_score": "",
+        "social_media_score": [
+            {
+                "facebook": "",
+                "twitter": "",
+                "linkdln": ""
+            }
+        ],
+        "browsing_history": [
+            {
+                "type_of_site": "",
+                "time_spent": "",
+                "frequency_of_visit": ""
+            }
+        ],
+        "app_history": [
+            {
+                "type_of_site": "",
+                "time_spent": "",
+                "frequency_of_visit": ""
+            }
+        ]
+    }
+]
