@@ -1,252 +1,262 @@
 [
     {
         "user_id": "1",
-        "psychometric_test_score": "",
+        "psychometric_test_score": "2",
         "social_media_score": [
             {
-                "facebook": "",
-                "twitter": "",
-                "linkdln": ""
+                "facebook": "1",
+                "twitter": "1",
+                "linkdln": "1"
             }
         ],
         "browsing_history": [
             {
-                "type_of_site": "",
-                "time_spent": "",
-                "frequency_of_visit": ""
+                "type_of_site": "0",
+                "time_spent": "3",
+                "frequency_of_visit": "1"
             }
         ],
         "app_history": [
             {
-                "type_of_site": "",
-                "time_spent": "",
-                "frequency_of_visit": ""
+                "type_of_site": "3",
+                "time_spent": "1",
+                "frequency_of_visit": "2"
             }
-        ]
+        ],
+        "total_score": "17"
     },
     {
         "user_id": "2",
-        "psychometric_test_score": "",
+        "psychometric_test_score": "9",
         "social_media_score": [
             {
-                "facebook": "",
-                "twitter": "",
-                "linkdln": ""
+                "facebook": "0",
+                "twitter": "3",
+                "linkdln": "3"
             }
         ],
         "browsing_history": [
             {
-                "type_of_site": "",
-                "time_spent": "",
-                "frequency_of_visit": ""
+                "type_of_site": "3",
+                "time_spent": "3",
+                "frequency_of_visit": "3"
             }
         ],
         "app_history": [
             {
-                "type_of_site": "",
-                "time_spent": "",
-                "frequency_of_visit": ""
+                "type_of_site": "3",
+                "time_spent": "3",
+                "frequency_of_visit": "4"
             }
-        ]
+        ],
+        "total_score":"43"
     },
     {
         "user_id": "3",
-        "psychometric_test_score": "",
+        "psychometric_test_score": "7",
         "social_media_score": [
             {
-                "facebook": "",
-                "twitter": "",
-                "linkdln": ""
+                "facebook": "4",
+                "twitter": "2",
+                "linkdln": "3"
             }
         ],
         "browsing_history": [
             {
-                "type_of_site": "",
-                "time_spent": "",
-                "frequency_of_visit": ""
+                "type_of_site": "2",
+                "time_spent": "1",
+                "frequency_of_visit": "4"
             }
         ],
         "app_history": [
             {
-                "type_of_site": "",
-                "time_spent": "",
-                "frequency_of_visit": ""
+                "type_of_site": "3",
+                "time_spent": "3",
+                "frequency_of_visit": "0"
             }
-        ]
+        ],
+        "total_score":"36"
     },
     {
         "user_id": "4",
-        "psychometric_test_score": "",
+        "psychometric_test_score": "5",
         "social_media_score": [
             {
-                "facebook": "",
-                "twitter": "",
-                "linkdln": ""
+                "facebook": "0",
+                "twitter": "0",
+                "linkdln": "3"
             }
         ],
         "browsing_history": [
             {
-                "type_of_site": "",
-                "time_spent": "",
-                "frequency_of_visit": ""
+                "type_of_site": "1",
+                "time_spent": "3",
+                "frequency_of_visit": "2"
             }
         ],
         "app_history": [
             {
-                "type_of_site": "",
-                "time_spent": "",
-                "frequency_of_visit": ""
+                "type_of_site": "1",
+                "time_spent": "2",
+                "frequency_of_visit": "3"
             }
-        ]
+        ],
+        "total_score":"25"
     },
     {
         "user_id": "5",
-        "psychometric_test_score": "",
+        "psychometric_test_score": "8",
         "social_media_score": [
             {
-                "facebook": "",
-                "twitter": "",
-                "linkdln": ""
+                "facebook": "4",
+                "twitter": "3",
+                "linkdln": "2"
             }
         ],
         "browsing_history": [
             {
-                "type_of_site": "",
-                "time_spent": "",
-                "frequency_of_visit": ""
+                "type_of_site": "3",
+                "time_spent": "0",
+                "frequency_of_visit": "1"
             }
         ],
         "app_history": [
             {
-                "type_of_site": "",
-                "time_spent": "",
-                "frequency_of_visit": ""
+                "type_of_site": "3",
+                "time_spent": "3",
+                "frequency_of_visit": "1"
             }
-        ]
+        ],
+        "total_score":"36"
     },
     {
         "user_id": "6",
-        "psychometric_test_score": "",
+        "psychometric_test_score": "8",
         "social_media_score": [
             {
-                "facebook": "",
-                "twitter": "",
-                "linkdln": ""
+                "facebook": "1",
+                "twitter": "3",
+                "linkdln": "2"
             }
         ],
         "browsing_history": [
             {
-                "type_of_site": "",
-                "time_spent": "",
-                "frequency_of_visit": ""
+                "type_of_site": "0",
+                "time_spent": "0",
+                "frequency_of_visit": "1"
             }
         ],
         "app_history": [
             {
-                "type_of_site": "",
-                "time_spent": "",
-                "frequency_of_visit": ""
+                "type_of_site": "1",
+                "time_spent": "3",
+                "frequency_of_visit": "2"
             }
-        ]
+        ],
+        "total_score":"29"
     },
     {
         "user_id": "7",
-        "psychometric_test_score": "",
+        "psychometric_test_score": "1",
         "social_media_score": [
             {
-                "facebook": "",
-                "twitter": "",
-                "linkdln": ""
+                "facebook": "0",
+                "twitter": "3",
+                "linkdln": "0"
             }
         ],
         "browsing_history": [
             {
-                "type_of_site": "",
-                "time_spent": "",
-                "frequency_of_visit": ""
+                "type_of_site": "2",
+                "time_spent": "2",
+                "frequency_of_visit": "0"
             }
         ],
         "app_history": [
             {
-                "type_of_site": "",
-                "time_spent": "",
-                "frequency_of_visit": ""
+                "type_of_site": "1",
+                "time_spent": "2",
+                "frequency_of_visit": "1"
             }
-        ]
+        ],
+        "total_score":"13"
     },
     {
         "user_id": "8",
-        "psychometric_test_score": "",
+        "psychometric_test_score": "8",
         "social_media_score": [
             {
-                "facebook": "",
-                "twitter": "",
-                "linkdln": ""
+                "facebook": "4",
+                "twitter": "3",
+                "linkdln": "3"
             }
         ],
         "browsing_history": [
             {
-                "type_of_site": "",
-                "time_spent": "",
-                "frequency_of_visit": ""
+                "type_of_site": "2",
+                "time_spent": "2",
+                "frequency_of_visit": "4"
             }
         ],
         "app_history": [
             {
-                "type_of_site": "",
-                "time_spent": "",
-                "frequency_of_visit": ""
+                "type_of_site": "1",
+                "time_spent": "2",
+                "frequency_of_visit": "2"
             }
-        ]
+        ],
+        "total_score":"39"
     },
     {
         "user_id": "9",
-        "psychometric_test_score": "",
+        "psychometric_test_score": "6",
         "social_media_score": [
             {
-                "facebook": "",
-                "twitter": "",
-                "linkdln": ""
+                "facebook": "4",
+                "twitter": "0",
+                "linkdln": "0"
             }
         ],
         "browsing_history": [
             {
-                "type_of_site": "",
-                "time_spent": "",
-                "frequency_of_visit": ""
+                "type_of_site": "2",
+                "time_spent": "0",
+                "frequency_of_visit": "4"
             }
         ],
         "app_history": [
             {
-                "type_of_site": "",
-                "time_spent": "",
-                "frequency_of_visit": ""
+                "type_of_site": "2",
+                "time_spent": "2",
+                "frequency_of_visit": "4"
             }
-        ]
+        ],
+        "total_score":"30"
     },
     {
         "user_id": "10",
-        "psychometric_test_score": "",
+        "psychometric_test_score": "8",
         "social_media_score": [
             {
-                "facebook": "",
-                "twitter": "",
-                "linkdln": ""
+                "facebook": "4",
+                "twitter": "0",
+                "linkdln": "0"
             }
         ],
         "browsing_history": [
             {
-                "type_of_site": "",
-                "time_spent": "",
-                "frequency_of_visit": ""
+                "type_of_site": "1",
+                "time_spent": "3",
+                "frequency_of_visit": "2"
             }
         ],
         "app_history": [
             {
-                "type_of_site": "",
-                "time_spent": "",
-                "frequency_of_visit": ""
+                "type_of_site": "1",
+                "time_spent": "3",
+                "frequency_of_visit": "4"
             }
-        ]
+        ],
+        "total_score":"34"
     }
 ]
