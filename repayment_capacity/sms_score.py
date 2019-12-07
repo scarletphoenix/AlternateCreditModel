@@ -21,7 +21,7 @@ bad_keywords = ["is overdue",
 "still not received",
 "are overdue",
 "towards overdue"
-];
+]
 
 def sms_score(sms):
     for keyword in bad_keywords:
@@ -29,12 +29,8 @@ def sms_score(sms):
             return 0
     return 1
 
-# sequence
-sequence = []
-
-# using filter function
 def calculate_sms_score(all_sms):
     total_score = 0;
     for sms in all_sms:
         total_score += sms_score(sms)
-    return total_score
+    return total_score/len(all_sms)*10
