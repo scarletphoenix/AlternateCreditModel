@@ -19,8 +19,9 @@ def life_style_assesment_matrix_engine(user_data):
         for sub_data in data:
             if user_id == sub_data['user_id']:
                 user_exists = True
+                existing_user_data = sub_data
     if user_exists:
-        update_lsamatrix(input_data)
+        update_lsamatrix(existing_user_data,input_data)
         return "Updated"
     else:
         create_new_user(input_data,len(data))
@@ -101,8 +102,9 @@ def create_new_user(user,max_id):
     with open(file_location, mode='w') as json_file:
         json.dump(feeds,json_file,indent=2)
 
-def update_lsamatrix(user):
-    calculate_lsamatrix(user)
+def update_lsamatrix(user,new_data):
+
+    total_score = calculate_lsamatrix(user)
     pass
 
 def calculate_lsamatrix(user):
