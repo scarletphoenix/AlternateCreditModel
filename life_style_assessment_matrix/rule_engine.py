@@ -1,24 +1,31 @@
 #!/usr/bin/env python
 
 import json
+from pathlib import Path
 
 DATABASE='life_matrix_user_data.json'
+script_location = Path(__file__).absolute().parent
+file_location = script_location / DATABASE
 
 def life_style_assesment_matrix_engine(user_data):
+
     user_id = -1
-    input_data = json.loads(user_data)
+    input_data = user_data
     if 'user_id' in input_data:
         user_id = input_data['user_id']
     user_exists = False
-    with open(DATABASE) as json_file:
+    with open(file_location) as json_file:
         data = json.load(json_file)
         for sub_data in data:
             if user_id == sub_data['user_id']:
                 user_exists = True
     if user_exists:
         update_lsamatrix(input_data)
+        return "Updated"
     else:
         create_new_user(input_data,len(data))
+        return "Added"
+
 
 def create_new_user(user,max_id):
     print(user)
@@ -88,10 +95,10 @@ def create_new_user(user,max_id):
     total_score = calculate_lsamatrix(user)
     new_user['total_score'] = total_score
    
-    with open(DATABASE) as feedsjson:
+    with open(file_location) as feedsjson:
         feeds = json.load(feedsjson)
     feeds.append(new_user)
-    with open(DATABASE, mode='w') as json_file:
+    with open(file_location, mode='w') as json_file:
         json.dump(feeds,json_file,indent=2)
 
 def update_lsamatrix(user):
