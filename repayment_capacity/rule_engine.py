@@ -7,7 +7,7 @@ DATABASE='repayment_user_data.json'
 script_location = Path(__file__).absolute().parent
 file_location = script_location / DATABASE
 
-def life_style_assesment_matrix_engine(user_data):
+def repayment_capacity_engine(user_data):
     user_id = -1
     input_data = user_data
     if 'user_id' in input_data:
@@ -19,7 +19,7 @@ def life_style_assesment_matrix_engine(user_data):
             if user_id == sub_data['user_id']:
                 user_exists = True
     if user_exists:
-        update_lsamatrix(input_data)
+        update_rcamatrix(input_data)
         return "Updated"
     else:
         create_new_user(input_data,len(data))
@@ -129,7 +129,7 @@ def create_new_user(user,max_id):
     new_user['tax_filing_score'] = tax_filing_score
     new_user['monthly_income_score'] = monthly_income_score
     new_user['employment_history_score'] = employment_history_score
-    new_user['app_hieducational_background_scorestory'] = educational_background_score
+    new_user['educational_background_score'] = educational_background_score
     new_user['sms_score'] = sms_score
     new_user['email_score'] = email_score
     new_user['demographic_based_score'] = demographic_based_score
@@ -145,17 +145,17 @@ def create_new_user(user,max_id):
     with open(file_location, mode='w') as json_file:
         json.dump(feeds,json_file,indent=2)
 
-def update_lsamatrix(user):
-    calculate_lsamatrix(user)
+def update_rcamatrix(user):
+    calculate_rcamatrix(user)
     pass
 
-def calculate_lsamatrix(user):
+def calculate_rcamatrix(user):
     
     pass
 # Remove this before committing
 if __name__== "__main__":
     data = {"sms_score":'10'}
     json_data = json.dumps(data)
-    life_style_assesment_matrix_engine(json_data)
+    repayment_capacity_engine(json_data)
     
 
