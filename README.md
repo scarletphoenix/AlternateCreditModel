@@ -52,13 +52,15 @@ Payload
  
 This post request will take as input some existing userid and new data to be modified. This demo employs the same endpoints as above for repayment and lifestyle score calculation. Updated values cause and increase/decrease in score as per the metric values given.
  For eg, to check the repayment scroring for user 1 with a different set of SMS, we do as below
+ 
  Body = `{
  "user_id" : "",
  "all_sms" : [
 <This contains a different string array of sms>
   ]
  }`
-  To update the repayment capacity for the user employ the endpoint `http://127.0.0.1:5000/repayment/create/user' with above body as payload
+ 
+  To update the repayment capacity for the user employ the endpoint `http://127.0.0.1:5000/repayment/create/user` with above body as payload
   
 This updates the sms score generated for the customer and gives a new alternate credit score.
 Similarly data for lifestyle matrix can be edited providing the required data payload with new changes
