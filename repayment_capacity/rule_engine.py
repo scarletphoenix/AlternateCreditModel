@@ -309,7 +309,7 @@ def calculate_rcamatrix(user):
     else:
         total_score = 3 * sms_score + 1 * monthly_income_score + 1 * employment_history_score
 
-    return total_score
+    return round(total_score,2)
 
 # Remove this before committing
 # if __name__== "__main__":
