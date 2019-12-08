@@ -7,7 +7,7 @@ data_set=[]
 def main():
     for i in range(100000):
         data_set.append(generate_data())
-    with open('repayment_capacity_dataset.csv', 'w', newline='') as file:
+    with open('repayment_capacity_dataset.csv', 'w',  newline='') as file:
         writer = csv.writer(file)
         writer.writerows(data_set)
 
@@ -24,7 +24,7 @@ def generate_data():
     insurance_score=insurance_score_generator()
     utility_score=utility_score_generator()
 
-    matrix_score=2*tax_filing_score + \
+    matrix_score=1*tax_filing_score + \
                 1*monthly_income_score + \
                 1*employment_history_score + \
                 1*educational_background_score + \
@@ -43,28 +43,28 @@ def generate_data():
     new_data.append(demographic_based_score)
     new_data.append(insurance_score)
     new_data.append(utility_score)
-    new_data.append(round(matrix_score,2))
+    new_data.append(round(matrix_score/2,2))
     return new_data
 
 def insurance_score_generator():
     vehicle_insurance_score=defaulter_score() + amount_score()
     health_insurance_score=defaulter_score() + amount_score()
-    total_score=vehicle_insurance_score + health_insurance_score
-    return total_score
+    total_score=4*vehicle_insurance_score + 6*health_insurance_score
+    return total_score/10
 
 def utility_score_generator():
     eletricity_utility_score=defaulter_score() + amount_score()
     internet_utility_score=defaulter_score() + amount_score()
     gas_utility_score=defaulter_score() + amount_score()
-    total_score=eletricity_utility_score + internet_utility_score + gas_utility_score
-    return total_score
+    total_score=3*eletricity_utility_score + 3*internet_utility_score + 4*gas_utility_score
+    return total_score/10
 
 
 def defaulter_score():
-    return random.randint(0,10)
+    return random.randint(0,5)
 
 def amount_score():
-    return random.randint(0,10)
+    return random.randint(0,5)
 
 if __name__== "__main__":
       main()
