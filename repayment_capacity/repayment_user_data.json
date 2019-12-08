@@ -1,44 +1,5 @@
 [
   {
-    "user_id": 1,
-    "tax_filing_score": 6,
-    "monthly_income_score": 1,
-    "employment_history_score": 6,
-    "educational_background_score": 10,
-    "sms_score": 1,
-    "email_score": 9,
-    "demographic_based_score": 2,
-    "utility_score": [
-      {
-        "gas_utility_score": {
-          "defaulter_score": 4,
-          "average_amount_score": 1
-        },
-        "eletricity_utility_score": {
-          "defaulter_score": 5,
-          "average_amount_score": 1
-        },
-        "internet_utility_score": {
-          "defaulter_score": 2,
-          "average_amount_score": 1
-        }
-      }
-    ],
-    "insurance_score": [
-      {
-        "vehicle_insurance_score": {
-          "defaulter_score": 3,
-          "average_amount_score": 5
-        },
-        "health_insurance": {
-          "defaulter_score": 3,
-          "average_amount_score": 4
-        }
-      }
-    ],
-    "total_score": 24.15
-  },
-  {
     "user_id": 2,
     "tax_filing_score": 4,
     "monthly_income_score": 6,
@@ -47,34 +8,30 @@
     "sms_score": 1,
     "email_score": 4,
     "demographic_based_score": 4,
-    "utility_score": [
-      {
-        "gas_utility_score": {
-          "defaulter_score": 0,
-          "average_amount_score": 5
-        },
-        "eletricity_utility_score": {
-          "defaulter_score": 4,
-          "average_amount_score": 0
-        },
-        "internet_utility_score": {
-          "defaulter_score": 3,
-          "average_amount_score": 0
-        }
+    "utility_score": {
+      "gas_utility_score": {
+        "defaulter_score": 0,
+        "average_amount_score": 5
+      },
+      "eletricity_utility_score": {
+        "defaulter_score": 4,
+        "average_amount_score": 0
+      },
+      "internet_utility_score": {
+        "defaulter_score": 3,
+        "average_amount_score": 0
       }
-    ],
-    "insurance_score": [
-      {
-        "vehicle_insurance_score": {
-          "defaulter_score": 2,
-          "average_amount_score": 3
-        },
-        "health_insurance": {
-          "defaulter_score": 5,
-          "average_amount_score": 4
-        }
+    },
+    "insurance_score": {
+      "vehicle_insurance_score": {
+        "defaulter_score": 2,
+        "average_amount_score": 3
+      },
+      "health_insurance_score": {
+        "defaulter_score": 5,
+        "average_amount_score": 4
       }
-    ],
+    },
     "total_score": 22.85
   },
   {
@@ -86,34 +43,30 @@
     "sms_score": 6,
     "email_score": 9,
     "demographic_based_score": 4,
-    "utility_score": [
-      {
-        "gas_utility_score": {
-          "defaulter_score": 0,
-          "average_amount_score": 3
-        },
-        "eletricity_utility_score": {
-          "defaulter_score": 4,
-          "average_amount_score": 2
-        },
-        "internet_utility_score": {
-          "defaulter_score": 4,
-          "average_amount_score": 2
-        }
+    "utility_score": {
+      "gas_utility_score": {
+        "defaulter_score": 0,
+        "average_amount_score": 3
+      },
+      "eletricity_utility_score": {
+        "defaulter_score": 4,
+        "average_amount_score": 2
+      },
+      "internet_utility_score": {
+        "defaulter_score": 4,
+        "average_amount_score": 2
       }
-    ],
-    "insurance_score": [
-      {
-        "vehicle_insurance_score": {
-          "defaulter_score": 0,
-          "average_amount_score": 4
-        },
-        "health_insurance": {
-          "defaulter_score": 4,
-          "average_amount_score": 4
-        }
+    },
+    "insurance_score": {
+      "vehicle_insurance_score": {
+        "defaulter_score": 0,
+        "average_amount_score": 4
+      },
+      "health_insurance_score": {
+        "defaulter_score": 4,
+        "average_amount_score": 4
       }
-    ],
+    },
     "total_score": 30.2
   },
   {
@@ -125,34 +78,30 @@
     "sms_score": 9,
     "email_score": 8,
     "demographic_based_score": 9,
-    "utility_score": [
-      {
-        "gas_utility_score": {
-          "defaulter_score": 5,
-          "average_amount_score": 3
-        },
-        "eletricity_utility_score": {
-          "defaulter_score": 2,
-          "average_amount_score": 0
-        },
-        "internet_utility_score": {
-          "defaulter_score": 4,
-          "average_amount_score": 1
-        }
+    "utility_score": {
+      "gas_utility_score": {
+        "defaulter_score": 5,
+        "average_amount_score": 3
+      },
+      "eletricity_utility_score": {
+        "defaulter_score": 2,
+        "average_amount_score": 0
+      },
+      "internet_utility_score": {
+        "defaulter_score": 4,
+        "average_amount_score": 1
       }
-    ],
-    "insurance_score": [
-      {
-        "vehicle_insurance_score": {
-          "defaulter_score": 0,
-          "average_amount_score": 3
-        },
-        "health_insurance": {
-          "defaulter_score": 4,
-          "average_amount_score": 3
-        }
+    },
+    "insurance_score": {
+      "vehicle_insurance_score": {
+        "defaulter_score": 0,
+        "average_amount_score": 3
+      },
+      "health_insurance_score": {
+        "defaulter_score": 4,
+        "average_amount_score": 3
       }
-    ],
+    },
     "total_score": 29.95
   },
   {
@@ -164,34 +113,30 @@
     "sms_score": 8,
     "email_score": 8,
     "demographic_based_score": 2,
-    "utility_score": [
-      {
-        "gas_utility_score": {
-          "defaulter_score": 0,
-          "average_amount_score": 3
-        },
-        "eletricity_utility_score": {
-          "defaulter_score": 1,
-          "average_amount_score": 4
-        },
-        "internet_utility_score": {
-          "defaulter_score": 5,
-          "average_amount_score": 1
-        }
+    "utility_score": {
+      "gas_utility_score": {
+        "defaulter_score": 0,
+        "average_amount_score": 3
+      },
+      "eletricity_utility_score": {
+        "defaulter_score": 1,
+        "average_amount_score": 4
+      },
+      "internet_utility_score": {
+        "defaulter_score": 5,
+        "average_amount_score": 1
       }
-    ],
-    "insurance_score": [
-      {
-        "vehicle_insurance_score": {
-          "defaulter_score": 0,
-          "average_amount_score": 5
-        },
-        "health_insurance": {
-          "defaulter_score": 3,
-          "average_amount_score": 5
-        }
+    },
+    "insurance_score": {
+      "vehicle_insurance_score": {
+        "defaulter_score": 0,
+        "average_amount_score": 5
+      },
+      "health_insurance_score": {
+        "defaulter_score": 3,
+        "average_amount_score": 5
       }
-    ],
+    },
     "total_score": 31.85
   },
   {
@@ -203,34 +148,30 @@
     "sms_score": 5,
     "email_score": 1,
     "demographic_based_score": 7,
-    "utility_score": [
-      {
-        "gas_utility_score": {
-          "defaulter_score": 3,
-          "average_amount_score": 5
-        },
-        "eletricity_utility_score": {
-          "defaulter_score": 1,
-          "average_amount_score": 1
-        },
-        "internet_utility_score": {
-          "defaulter_score": 3,
-          "average_amount_score": 0
-        }
+    "utility_score": {
+      "gas_utility_score": {
+        "defaulter_score": 3,
+        "average_amount_score": 5
+      },
+      "eletricity_utility_score": {
+        "defaulter_score": 1,
+        "average_amount_score": 1
+      },
+      "internet_utility_score": {
+        "defaulter_score": 3,
+        "average_amount_score": 0
       }
-    ],
-    "insurance_score": [
-      {
-        "vehicle_insurance_score": {
-          "defaulter_score": 4,
-          "average_amount_score": 0
-        },
-        "health_insurance": {
-          "defaulter_score": 5,
-          "average_amount_score": 0
-        }
+    },
+    "insurance_score": {
+      "vehicle_insurance_score": {
+        "defaulter_score": 4,
+        "average_amount_score": 0
+      },
+      "health_insurance_score": {
+        "defaulter_score": 5,
+        "average_amount_score": 0
       }
-    ],
+    },
     "total_score": 26.05
   },
   {
@@ -242,34 +183,30 @@
     "sms_score": 5,
     "email_score": 4,
     "demographic_based_score": 3,
-    "utility_score": [
-      {
-        "gas_utility_score": {
-          "defaulter_score": 4,
-          "average_amount_score": 1
-        },
-        "eletricity_utility_score": {
-          "defaulter_score": 5,
-          "average_amount_score": 0
-        },
-        "internet_utility_score": {
-          "defaulter_score": 0,
-          "average_amount_score": 3
-        }
+    "utility_score": {
+      "gas_utility_score": {
+        "defaulter_score": 4,
+        "average_amount_score": 1
+      },
+      "eletricity_utility_score": {
+        "defaulter_score": 5,
+        "average_amount_score": 0
+      },
+      "internet_utility_score": {
+        "defaulter_score": 0,
+        "average_amount_score": 3
       }
-    ],
-    "insurance_score": [
-      {
-        "vehicle_insurance_score": {
-          "defaulter_score": 3,
-          "average_amount_score": 2
-        },
-        "health_insurance": {
-          "defaulter_score": 4,
-          "average_amount_score": 2
-        }
+    },
+    "insurance_score": {
+      "vehicle_insurance_score": {
+        "defaulter_score": 3,
+        "average_amount_score": 2
+      },
+      "health_insurance_score": {
+        "defaulter_score": 4,
+        "average_amount_score": 2
       }
-    ],
+    },
     "total_score": 27.9
   },
   {
@@ -281,34 +218,30 @@
     "sms_score": 10,
     "email_score": 6,
     "demographic_based_score": 1,
-    "utility_score": [
-      {
-        "gas_utility_score": {
-          "defaulter_score": 4,
-          "average_amount_score": 5
-        },
-        "eletricity_utility_score": {
-          "defaulter_score": 4,
-          "average_amount_score": 5
-        },
-        "internet_utility_score": {
-          "defaulter_score": 1,
-          "average_amount_score": 0
-        }
+    "utility_score": {
+      "gas_utility_score": {
+        "defaulter_score": 4,
+        "average_amount_score": 5
+      },
+      "eletricity_utility_score": {
+        "defaulter_score": 4,
+        "average_amount_score": 5
+      },
+      "internet_utility_score": {
+        "defaulter_score": 1,
+        "average_amount_score": 0
       }
-    ],
-    "insurance_score": [
-      {
-        "vehicle_insurance_score": {
-          "defaulter_score": 5,
-          "average_amount_score": 2
-        },
-        "health_insurance": {
-          "defaulter_score": 4,
-          "average_amount_score": 5
-        }
+    },
+    "insurance_score": {
+      "vehicle_insurance_score": {
+        "defaulter_score": 5,
+        "average_amount_score": 2
+      },
+      "health_insurance_score": {
+        "defaulter_score": 4,
+        "average_amount_score": 5
       }
-    ],
+    },
     "total_score": 32.2
   },
   {
@@ -320,34 +253,30 @@
     "sms_score": 8,
     "email_score": 5,
     "demographic_based_score": 7,
-    "utility_score": [
-      {
-        "gas_utility_score": {
-          "defaulter_score": 0,
-          "average_amount_score": 5
-        },
-        "eletricity_utility_score": {
-          "defaulter_score": 1,
-          "average_amount_score": 1
-        },
-        "internet_utility_score": {
-          "defaulter_score": 3,
-          "average_amount_score": 1
-        }
+    "utility_score": {
+      "gas_utility_score": {
+        "defaulter_score": 0,
+        "average_amount_score": 5
+      },
+      "eletricity_utility_score": {
+        "defaulter_score": 1,
+        "average_amount_score": 1
+      },
+      "internet_utility_score": {
+        "defaulter_score": 3,
+        "average_amount_score": 1
       }
-    ],
-    "insurance_score": [
-      {
-        "vehicle_insurance_score": {
-          "defaulter_score": 1,
-          "average_amount_score": 3
-        },
-        "health_insurance": {
-          "defaulter_score": 2,
-          "average_amount_score": 1
-        }
+    },
+    "insurance_score": {
+      "vehicle_insurance_score": {
+        "defaulter_score": 1,
+        "average_amount_score": 3
+      },
+      "health_insurance_score": {
+        "defaulter_score": 2,
+        "average_amount_score": 1
       }
-    ],
+    },
     "total_score": 33.2
   },
   {
@@ -359,34 +288,64 @@
     "sms_score": 7,
     "email_score": 7,
     "demographic_based_score": 2,
-    "utility_score": [
-      {
-        "gas_utility_score": {
-          "defaulter_score": 2,
-          "average_amount_score": 0
-        },
-        "eletricity_utility_score": {
-          "defaulter_score": 0,
-          "average_amount_score": 2
-        },
-        "internet_utility_score": {
-          "defaulter_score": 4,
-          "average_amount_score": 3
-        }
+    "utility_score": {
+      "gas_utility_score": {
+        "defaulter_score": 2,
+        "average_amount_score": 0
+      },
+      "eletricity_utility_score": {
+        "defaulter_score": 0,
+        "average_amount_score": 2
+      },
+      "internet_utility_score": {
+        "defaulter_score": 4,
+        "average_amount_score": 3
       }
-    ],
-    "insurance_score": [
-      {
-        "vehicle_insurance_score": {
-          "defaulter_score": 3,
-          "average_amount_score": 1
-        },
-        "health_insurance": {
-          "defaulter_score": 3,
-          "average_amount_score": 3
-        }
+    },
+    "insurance_score": {
+      "vehicle_insurance_score": {
+        "defaulter_score": 3,
+        "average_amount_score": 1
+      },
+      "health_insurance_score": {
+        "defaulter_score": 3,
+        "average_amount_score": 3
       }
-    ],
+    },
     "total_score": 25.15
+  },
+  {
+    "user_id": 1,
+    "monthly_income_score": 9,
+    "employment_history_score": 6,
+    "sms_score": 10,
+    "insurance_score": {
+      "vehicle_insurance_score": {
+        "defaulter_score": 3,
+        "average_amount_score": 5
+      },
+      "health_insurance": {
+        "defaulter_score": 3,
+        "average_amount_score": 4
+      }
+    },
+    "tax_filing_score": 6,
+    "educational_background_score": 10,
+    "demographic_based_score": 2,
+    "utility_score": {
+      "gas_utility_score": {
+        "defaulter_score": 4,
+        "average_amount_score": 1
+      },
+      "eletricity_utility_score": {
+        "defaulter_score": 5,
+        "average_amount_score": 1
+      },
+      "internet_utility_score": {
+        "defaulter_score": 2,
+        "average_amount_score": 1
+      }
+    },
+    "total_score": 45
   }
 ]

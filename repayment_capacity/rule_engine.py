@@ -186,6 +186,31 @@ def create_new_user(user,max_id):
         json.dump(feeds,json_file,indent=2)
 
 def update_rcamatrix(user,new_data):
+    average_amount_score = 0
+    defaulter_score = 0
+    tax_filing_score =0
+    monthly_income_score = 0
+    employment_history_score = 0
+    educational_background_score = 0
+    sms_score = 0
+    email_score = 0
+    demographic_based_score = 0
+    health_insurance_score = 0
+    vehicle_insurance_score = 0
+    eletricity_utility_score = 0
+    gas_utility_score = 0
+    internet_utility_score = 0
+    health_insurance_dict = {}
+    vehicle_insurance_dict = {}
+    electricity_dict = {}
+    gas_dict = {}
+    internet_dict = {}
+    utility_score_dict = {}
+    insurance_score_dict = {}
+    utility_score = []
+    insurance_score = []
+
+    
     if 'monthly_income_score' in new_data:
         monthly_income_score = int(new_data['monthly_income_score'])
     else:
@@ -200,16 +225,49 @@ def update_rcamatrix(user,new_data):
     else:
         sms_score = int(user['sms_score'])
 
-    
     new_user = {}
     user_id = user['user_id']
     new_user['user_id'] = user_id
     new_user['monthly_income_score'] = monthly_income_score
     new_user['employment_history_score'] = employment_history_score
     new_user['sms_score'] = sms_score
+
+    new_user['insurance_score'] =  {
+        "vehicle_insurance_score": {
+          "defaulter_score": 3,
+          "average_amount_score": 5
+        },
+        "health_insurance": {
+          "defaulter_score": 3,
+          "average_amount_score": 4
+        }
+      }
+    
+    new_user["tax_filing_score"]= 6
+    new_user["educational_background_score"]= 10
+    new_user["demographic_based_score"]= 2
+
+    new_user['utility_score'] =  {
+        "gas_utility_score": {
+          "defaulter_score": 4,
+          "average_amount_score": 1
+        },
+        "eletricity_utility_score": {
+          "defaulter_score": 5,
+          "average_amount_score": 1
+        },
+        "internet_utility_score": {
+          "defaulter_score": 2,
+          "average_amount_score": 1
+        }
+      }
+    
+
     total_score = calculate_rcamatrix(new_user)
     new_user['total_score'] = total_score
    
+
+
     with open(file_location) as feedsjson:
         feeds = json.load(feedsjson)
     for sub_data in feeds:
@@ -253,51 +311,7 @@ def calculate_rcamatrix(user):
         email_score = int(user['email_score'])
     if 'demographic_based_score' in user:
         demographic_based_score = int(user['demographic_based_score'])
-
-    if 'insurance_score' in user :
-        if user['insurance_score']['vehicle_insurance_score']:
-            if user['insurance_score']['vehicle_insurance_score']['defaulter_score']:
-                defaulter_score = user['insurance_score']['vehicle_insurance_score']['defaulter_score']
-            if user['insurance_score']['vehicle_insurance_score']['average_amount_score']:
-                average_amount_score = user['insurance_score']['vehicle_insurance_score']['average_amount_score']
-            vehicle_insurance_score = int(defaulter_score+average_amount_score)
-            defaulter_score = 0
-            average_amount_score = 0
-        if user['insurance_score']['health_insurance_score']:
-            if user['insurance_score']['health_insurance_score']['defaulter_score']:
-                defaulter_score = user['insurance_score']['health_insurance_score']['defaulter_score']
-            if user['insurance_score']['health_insurance_score']['average_amount_score']:
-                average_amount_score = user['insurance_score']['health_insurance_score']['average_amount_score']
-            health_insurance_score = int(defaulter_score+average_amount_score)
-            defaulter_score = 0
-            average_amount_score = 0
-    insurance_score = int(vehicle_insurance_score + health_insurance_score)    
-
-
-    if 'utility_score' in user :
-        if user['utility_score']['internet_utility_score']:
-            if user['utility_score']['internet_utility_score']['defaulter_score']:
-                defaulter_score = user['utility_score']['internet_utility_score']['defaulter_score']
-            if user['utility_score']['internet_utility_score']['average_amount_score']:
-                average_amount_score = user['utility_score']['internet_utility_score']['average_amount_score']
-            internet_utility_score = int(defaulter_score+average_amount_score)
-            defaulter_score = 0
-            average_amount_score = 0
-        if user['utility_score']['gas_utility_score']:
-            if user['utility_score']['gas_utility_score']['defaulter_score']:
-                defaulter_score = user['utility_score']['gas_utility_score']['defaulter_score']
-            if user['utility_score']['gas_utility_score']['average_amount_score']:
-                average_amount_score = user['utility_score']['gas_utility_score']['average_amount_score']
-            gas_utility_score = int(defaulter_score+average_amount_score)
-            defaulter_score = 0
-            average_amount_score = 0
-        if user['utility_score']['eletricity_utility_score']:
-            if user['utility_score']['eletricity_utility_score']['defaulter_score']:
-                defaulter_score = user['utility_score']['eletricity_utility_score']['defaulter_score']
-            if user['utility_score']['eletricity_utility_score']['average_amount_score']:
-                average_amount_score = user['utility_score']['eletricity_utility_score']['average_amount_score']
-            eletricity_utility_score = int(defaulter_score+average_amount_score)
-    utility_score = int(gas_utility_score + internet_utility_score + eletricity_utility_score)    
+   
 
     
     if sms_score==0 and employment_history_score==0:
