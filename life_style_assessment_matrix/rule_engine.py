@@ -17,7 +17,7 @@ def life_style_assesment_matrix_engine(user_data):
     with open(file_location) as json_file:
         data = json.load(json_file)
         for sub_data in data:
-            if user_id == sub_data['user_id']:
+            if user_id == int(sub_data['user_id']):
                 user_exists = True
                 existing_user_data = sub_data
     if user_exists:
@@ -30,7 +30,7 @@ def life_style_assesment_matrix_engine(user_data):
 
 def create_new_user(user,max_id):
     print(user)
-    user_id = max_id + 1
+    user_id = str(max_id + 1)
     facebook = 0
     twitter = 0
     linkdln = 0
@@ -103,10 +103,101 @@ def create_new_user(user,max_id):
         json.dump(feeds,json_file,indent=2)
 
 def update_lsamatrix(user,new_data):
+    social_media_score = []
+    browsin_history = []
+    app_history = []
+    if 'psychometric_test_score' in new_data:
+        psychometric_test_score = int(new_data['psychometric_test_score'])
+    else:
+        psychometric_test_score = int(user['psychometric_test_score'])
 
-    total_score = calculate_lsamatrix(user)
-    pass
+    if 'social_media_score' in new_data :
+        if new_data['social_media_score']['facebook']:
+            facebook = new_data['social_media_score']['facebook']
+        else:
+            facebook = user['social_media_score']['facebook']
+        if new_data['social_media_score']['twitter']:
+            twitter = new_data['social_media_score']['twitter']
+        else:
+            twitter = user['social_media_score']['twitter']
+        if new_data['social_media_score']['linkdln']:
+            linkdln = new_data['social_media_score']['linkdln']
+        else:
+            linkdln = user['social_media_score']['linkdln']
+        social_media_dict = {}
+        social_media_dict['facebook']=facebook
+        social_media_dict['twitter']=twitter
+        social_media_dict['linkdln']=linkdln
+        social_media_score.append(social_media_dict)
+    else:
+        social_media_score = user['social_media_score']
 
+    if 'browsing_history' in new_data :
+        if new_data['browsing_history']['type_of_site']:
+            type_of_site = new_data['browsing_history']['type_of_site']
+        else:
+            type_of_site = user['browsing_history']['type_of_site']
+        if new_data['browsing_history']['time_spent']:
+            time_spent = new_data['browsing_history']['time_spent']
+        else:
+            time_spent = user['browsing_history']['time_spent']
+        if new_data['browsing_history']['frequency_of_visit']:
+            frequency_of_visit = new_data['browsing_history']['frequency_of_visit']
+        else:
+            frequency_of_visit = user['browsing_history']['frequency_of_visit']
+        browsing_history_dict = {}
+        browsing_history_dict['type_of_site']=type_of_site
+        browsing_history_dict['time_spent']=time_spent
+        browsing_history_dict['frequency_of_visit']=frequency_of_visit
+        browsing_history.append(browsing_history_dict)
+    else:
+        browsing_history = user['browsing_history']
+
+    if 'app_history' in new_data:
+        if new_data['app_history']['type_of_site']:
+            app_type_site = new_data['app_history']['type_of_site']
+        else:
+            app_type_site = user['app_history']['type_of_site']
+        if new_data['app_history']['time_spent']:
+            app_time_spent = new_data['app_history']['time_spent']
+        else:
+            app_time_spent = user['app_history']['time_spent']
+        if new_data['app_history']['frequency_of_visit']:
+            app_frequency_of_visit = new_data['app_history']['frequency_of_visit']
+        else:
+            app_frequency_of_visit = user['app_history']['frequency_of_visit']
+        
+        app_history_dict = {}
+        app_history_dict['type_of_site']=app_type_site
+        app_history_dict['time_spent']=app_time_spent
+        app_history_dict['frequency_of_visit']=app_frequency_of_visit
+        app_history.append(app_history_dict)
+
+    else:
+        app_history = user['app_history']
+    
+    new_user = {}
+    user_id = user['user_id']
+    new_user['user_id'] = user_id
+    new_user['psychometric_test_score'] = psychometric_test_score
+    new_user['social_media_score'] = social_media_score
+    new_user['browsing_history'] = browsing_history
+    new_user['app_history'] = app_history
+    total_score = calculate_lsamatrix(new_user)
+    new_user['total_score'] = total_score
+   
+    with open(file_location) as feedsjson:
+        feeds = json.load(feedsjson)
+    for sub_data in feeds:
+        if new_user['user_id'] == sub_data['user_id']:
+            feeds.remove(sub_data)
+            print("deleted sub data")
+
+    feeds.append(new_user)
+    with open(file_location, mode='w') as json_file:
+        json.dump(feeds,json_file,indent=2)
+
+ 
 def calculate_lsamatrix(user):
     facebook = 0
     twitter = 0
@@ -127,29 +218,29 @@ def calculate_lsamatrix(user):
         psychometric_test_score = int(user['psychometric_test_score'])
 
     if 'social_media_score' in user :
-        if user['social_media_score']['facebook']:
+        if 'facebok' in user['social_media_score']:
             facebook = user['social_media_score']['facebook']
-        if user['social_media_score']['twitter']:
+        if 'twitter' in user['social_media_score']:
             twitter = user['social_media_score']['twitter']
-        if user['social_media_score']['linkdln']:
+        if 'linkdln' in user['social_media_score']:
             linkdln = user['social_media_score']['linkdln']
     social_media_score = int(facebook + twitter + linkdln)    
 
     if 'browsing_history' in user :
-        if user['browsing_history']['type_of_site']:
+        if type_of_site in user['browsing_history']:
             type_of_site = user['browsing_history']['type_of_site']
-        if user['browsing_history']['time_spent']:
+        if 'time_spent' in user['browsing_history']:
             time_spent = user['browsing_history']['time_spent']
-        if user['browsing_history']['frequency_of_visit']:
+        if 'frequency_of_visit' in user['browsing_history']:
             frequency_of_visit = user['browsing_history']['frequency_of_visit']
     browsing_history = int(type_of_site + time_spent + frequency_of_visit)
 
     if 'app_history' in user:
-        if user['app_history']['type_of_site']:
+        if 'type_of_site' in user['app_history']:
             app_type_site = user['app_history']['type_of_site']
-        if user['app_history']['time_spent']:
+        if 'time_spent' in user['app_history']:
             app_time_spent = user['app_history']['time_spent']
-        if user['app_history']['frequency_of_visit']:
+        if 'frequency_of_visit' in user['app_history']:
             app_frequency_of_visit = user['app_history']['frequency_of_visit']
     app_history = int(app_type_site + app_time_spent + app_frequency_of_visit)
     
@@ -176,9 +267,9 @@ def calculate_lsamatrix(user):
 
 
 # Remove this before committing
-if __name__== "__main__":
-    data = {"psychometric_test_score":"10"}
-    json_data = json.dumps(data)
-    life_style_assesment_matrix_engine(json_data)
+#if __name__== "__main__":
+#    data = {"user_id":1,"psychometric_test_score":"7"}
+#    json_data = json.dumps(data)
+#    life_style_assesment_matrix_engine(json_data)
     
 
