@@ -6,18 +6,18 @@ from life_style_assessment_matrix.rule_engine import life_style_assesment_matrix
 from repayment_capacity.rule_engine import repayment_capacity_engine
 urls_blueprint = Blueprint('urls', __name__,)
 
-@urls_blueprint.route('/userids/all/lifestyle')
+@urls_blueprint.route('/lifestyle/list')
 def lifestyle_data_all_users():
     return fetch_all_users_lifestyle()
 
-@urls_blueprint.route('/userids/all/repayment')
+@urls_blueprint.route('/repayment/list')
 def repayment_data_all_users():
     return fetch_all_users_repayment()
 
 @urls_blueprint.route('/lifestyle/user/create',methods=['POST'])
-def create_new_user():
+def create_new_user_lifestyle():
     return life_style_assesment_matrix_engine(request.get_json())
 
 @urls_blueprint.route('/repayment/user/create',methods=['POST'])
-def create_new_user():
+def create_new_user_repayment():
     return repayment_capacity_engine(request.get_json())
