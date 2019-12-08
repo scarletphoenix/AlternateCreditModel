@@ -1,0 +1,227 @@
+[
+  {
+      "user_id": "1",
+      "tax_filing_score": "2",
+      "monthly_income_score": "2",
+      "employment_history_score": "2",
+      "educational_background_score": "2",
+      "sms_score": "2",
+      "email_score": "2",
+      "demographic_based_score": "2",
+      "utility_score": [
+          {
+              "gas_utility_score" : {
+                  "defaulter_score": "1",
+                  "average_amount_score": "1"
+              }
+          },
+          {
+            "eletricity_utility_score" : {
+                "defaulter_score": "1",
+                "average_amount_score": "1"
+            }
+          },
+          {
+            "internet_utility_score" : {
+                "defaulter_score": "1",
+                "average_amount_score": "1"
+            }
+          }
+      ],
+      "insurance_score": [
+        {
+            "vehicle_insurance_score" : {
+                "defaulter_score": "1",
+                "average_amount_score": "1"
+            }
+        },
+        {
+          "health_insurance_score" : {
+              "defaulter_score": "1",
+              "average_amount_score": "1"
+          }
+        }
+      ],
+      "total_score": "17"
+  },
+  {
+    "user_id": "2",
+    "tax_filing_score": "2",
+    "monthly_income_score": "2",
+    "employment_history_score": "2",
+    "educational_background_score": "2",
+    "sms_score": "2",
+    "email_score": "2",
+    "demographic_based_score": "2",
+    "utility_score": [
+        {
+            "gas_utility_score" : {
+                "defaulter_score": "1",
+                "average_amount_score": "1"
+            }
+        },
+        {
+          "eletricity_utility_score" : {
+              "defaulter_score": "1",
+              "average_amount_score": "1"
+          }
+        },
+        {
+          "internet_utility_score" : {
+              "defaulter_score": "1",
+              "average_amount_score": "1"
+          }
+        }
+    ],
+    "insurance_score": [
+      {
+          "vehicle_insurance_score" : {
+              "defaulter_score": "1",
+              "average_amount_score": "1"
+          }
+      },
+      {
+        "health_insurance_score" : {
+            "defaulter_score": "1",
+            "average_amount_score": "1"
+        }
+      }
+    ],
+    "total_score": "17"
+  },
+  {
+    "user_id": "3",
+    "tax_filing_score": "2",
+    "monthly_income_score": "2",
+    "employment_history_score": "2",
+    "educational_background_score": "2",
+    "sms_score": "2",
+    "email_score": "2",
+    "demographic_based_score": "2",
+    "utility_score": [
+        {
+            "gas_utility_score" : {
+                "defaulter_score": "1",
+                "average_amount_score": "1"
+            }
+        },
+        {
+          "eletricity_utility_score" : {
+              "defaulter_score": "1",
+              "average_amount_score": "1"
+          }
+        },
+        {
+          "internet_utility_score" : {
+              "defaulter_score": "1",
+              "average_amount_score": "1"
+          }
+        }
+    ],
+    "insurance_score": [
+      {
+          "vehicle_insurance_score" : {
+              "defaulter_score": "1",
+              "average_amount_score": "1"
+          }
+      },
+      {
+        "health_insurance_score" : {
+            "defaulter_score": "1",
+            "average_amount_score": "1"
+        }
+      }
+    ],
+    "total_score": "17"
+  },
+  {
+    "user_id": "4",
+    "tax_filing_score": "2",
+    "monthly_income_score": "2",
+    "employment_history_score": "2",
+    "educational_background_score": "2",
+    "sms_score": "2",
+    "email_score": "2",
+    "demographic_based_score": "2",
+    "utility_score": [
+        {
+            "gas_utility_score" : {
+                "defaulter_score": "1",
+                "average_amount_score": "1"
+            }
+        },
+        {
+          "eletricity_utility_score" : {
+              "defaulter_score": "1",
+              "average_amount_score": "1"
+          }
+        },
+        {
+          "internet_utility_score" : {
+              "defaulter_score": "1",
+              "average_amount_score": "1"
+          }
+        }
+    ],
+    "insurance_score": [
+      {
+          "vehicle_insurance_score" : {
+              "defaulter_score": "1",
+              "average_amount_score": "1"
+          }
+      },
+      {
+        "health_insurance_score" : {
+            "defaulter_score": "1",
+            "average_amount_score": "1"
+        }
+      }
+    ],
+    "total_score": "17"
+  },
+  {
+    "user_id": "5",
+    "tax_filing_score": "2",
+    "monthly_income_score": "2",
+    "employment_history_score": "2",
+    "educational_background_score": "2",
+    "sms_score": "2",
+    "email_score": "2",
+    "demographic_based_score": "2",
+    "utility_score": [
+        {
+            "gas_utility_score" : {
+                "defaulter_score": "1",
+                "average_amount_score": "1"
+            }
+        },
+        {
+          "eletricity_utility_score" : {
+              "defaulter_score": "1",
+              "average_amount_score": "1"
+          }
+        },
+        {
+          "internet_utility_score" : {
+              "defaulter_score": "1",
+              "average_amount_score": "1"
+          }
+        }
+    ],
+    "insurance_score": [
+      {
+          "vehicle_insurance_score" : {
+              "defaulter_score": "1",
+              "average_amount_score": "1"
+          }
+      },
+      {
+        "health_insurance_score" : {
+            "defaulter_score": "1",
+            "average_amount_score": "1"
+        }
+      }
+    ],
+    "total_score": "17"
+  }
+]
