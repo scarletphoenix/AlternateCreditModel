@@ -263,7 +263,7 @@ def calculate_lsamatrix(user):
         total_score = 2 * psychometric_test_score + 1 * browsing_history + 1 * app_history + 1 * social_media_score
 
     
-    return total_score
+    return round(total_score,2)
 
 
 
