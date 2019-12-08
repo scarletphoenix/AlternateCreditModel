@@ -24,8 +24,7 @@ def life_style_assesment_matrix_engine(user_data):
         update_lsamatrix(existing_user_data,input_data)
         return "Updated"
     else:
-        create_new_user(input_data,len(data))
-        return "Added"
+        return  create_new_user(input_data,len(data))
 
 
 def create_new_user(user,max_id):
@@ -101,6 +100,8 @@ def create_new_user(user,max_id):
     feeds.append(new_user)
     with open(file_location, mode='w') as json_file:
         json.dump(feeds,json_file,indent=2)
+    
+    return user_id
 
 def update_lsamatrix(user,new_data):
     social_media_score = []

@@ -17,3 +17,11 @@ def create_new_user_lifestyle():
 @urls_blueprint.route('/repayment/user/create',methods=['POST'])
 def create_new_user_repayment():
     return repayment_capacity_engine(request.get_json())
+
+@urls_blueprint.route('/lifestyle/user/update',methods=['POST'])
+def update_user_lifestyle():
+    return life_style_assesment_matrix_engine(request.get_json())
+
+@urls_blueprint.route('/repayment/user/update',methods=['POST'])
+def update_user_repayment():
+    return repayment_capacity_engine(request.get_json())

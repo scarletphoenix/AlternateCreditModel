@@ -16,5 +16,12 @@ def fetch_user_score(id):
           if int(user_id) == int(sub_data_1['user_id']):
               lifestyle = sub_data_1
 
-  return str(int(repayment['total_score']) + int(lifestyle['total_score']))
+  score = str(int(repayment['total_score']) + int(lifestyle['total_score']))
+  total_data = []
+  total_data.append(lifestyle)
+  total_data.append(repayment)
+  data_dict={'alternate_credit_score':score}
+  total_data.append(data_dict)
+  json_data = json.dumps(total_data,indent=2)
+  return json_data, score
 

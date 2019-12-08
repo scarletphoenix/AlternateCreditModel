@@ -62,8 +62,7 @@ def repayment_capacity_engine(user_data):
         update_rcamatrix(existing_user_data, input_data)
         return "Updated"
     else:
-        create_new_user(input_data,len(data))
-        return "Added"
+        return create_new_user(input_data,len(data))
 
 
 def create_new_user(user,max_id):
@@ -184,6 +183,7 @@ def create_new_user(user,max_id):
     feeds.append(new_user)
     with open(file_location, mode='w') as json_file:
         json.dump(feeds,json_file,indent=2)
+    return str(user_id)
 
 def update_rcamatrix(user,new_data):
     average_amount_score = 0
