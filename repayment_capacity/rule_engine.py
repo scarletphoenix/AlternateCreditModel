@@ -2,10 +2,47 @@
 
 import json
 from pathlib import Path
+import math
 
 DATABASE='repayment_user_data.json'
 script_location = Path(__file__).absolute().parent
 file_location = script_location / DATABASE
+
+bad_keywords = ["is overdue",
+"has bounced",
+"bounce",
+"has not been honoured",
+"severely overdue",
+"is still pending",
+"overdue hai",
+"overdue of",
+"despite several reminders",
+"is still due",
+"is still unpaid",
+"payment overdue",
+"overdues",
+"is unpaid",
+"remains unpaid",
+"is outstanding",
+"in overdue",
+"have not received",
+"still not received",
+"are overdue",
+"towards overdue"
+]
+
+def sms_score_calc(sms):
+    for keyword in bad_keywords:
+        if (keyword in sms.lower()):
+            return 0
+    return 1
+
+def calculate_sms_score_all(all_sms):
+    total_score = 0
+    for sms in all_sms:
+        total_score += sms_score_calc(sms)
+    return math.ceil(total_score/len(all_sms)*10)
+
 
 def repayment_capacity_engine(user_data):
     user_id = -1
@@ -13,13 +50,16 @@ def repayment_capacity_engine(user_data):
     if 'user_id' in input_data:
         user_id = input_data['user_id']
     user_exists = False
+    if 'all_sms' in input_data:
+        input_data['sms_score'] = calculate_sms_score_all(input_data['all_sms'])
     with open(file_location) as json_file:
         data = json.load(json_file)
         for sub_data in data:
             if user_id == sub_data['user_id']:
                 user_exists = True
+                existing_user_data = sub_data
     if user_exists:
-        update_rcamatrix(input_data)
+        update_rcamatrix(existing_user_data, input_data)
         return "Updated"
     else:
         create_new_user(input_data,len(data))
@@ -27,7 +67,7 @@ def repayment_capacity_engine(user_data):
 
 
 def create_new_user(user,max_id):
-    print(user)
+    #print(user)
     user_id = max_id + 1
     average_amount_score = 0
     defaulter_score = 0
@@ -63,7 +103,7 @@ def create_new_user(user,max_id):
         employment_history_score = user['employment_history_score']
     if 'educational_background_score' in user:
         educational_background_score = user['educational_background_score']
-    if 'sms_score' in user:
+    if 'all_sms' in user:
         sms_score = user['sms_score']
     if 'email_score' in user:
         email_score = user['email_score']
@@ -135,8 +175,8 @@ def create_new_user(user,max_id):
     new_user['demographic_based_score'] = demographic_based_score
     new_user['utility_score'] = utility_score
     new_user['insurance_score'] = insurance_score
-    #total_score = calculate_lsamatrix(user)
-    total_score = 0
+    total_score = calculate_rcamatrix(user)
+
     new_user['total_score'] = total_score
    
     with open(file_location) as feedsjson:
@@ -145,9 +185,40 @@ def create_new_user(user,max_id):
     with open(file_location, mode='w') as json_file:
         json.dump(feeds,json_file,indent=2)
 
-def update_rcamatrix(user):
-    calculate_rcamatrix(user)
-    pass
+def update_rcamatrix(user,new_data):
+    if 'monthly_income_score' in new_data:
+        monthly_income_score = int(new_data['monthly_income_score'])
+    else:
+        monthly_income_score = int(user['monthly_income_score'])
+        
+    if 'employment_history_score' in new_data:
+        employment_history_score = int(new_data['employment_history_score'])
+    else:
+        employment_history_score = int(user['employment_history_score'])
+    if 'sms_score' in new_data:
+        sms_score = int(new_data['sms_score'])
+    else:
+        sms_score = int(user['sms_score'])
+
+    
+    new_user = {}
+    user_id = user['user_id']
+    new_user['user_id'] = user_id
+    new_user['monthly_income_score'] = monthly_income_score
+    new_user['employment_history_score'] = employment_history_score
+    new_user['sms_score'] = sms_score
+    total_score = calculate_rcamatrix(new_user)
+    new_user['total_score'] = total_score
+   
+    with open(file_location) as feedsjson:
+        feeds = json.load(feedsjson)
+    for sub_data in feeds:
+        if new_user['user_id'] == sub_data['user_id']:
+            feeds.remove(sub_data)
+
+    feeds.append(new_user)
+    with open(file_location, mode='w') as json_file:
+        json.dump(feeds,json_file,indent=2)
 
 def calculate_rcamatrix(user):
     average_amount_score = 0
@@ -236,14 +307,15 @@ def calculate_rcamatrix(user):
     elif employment_history_score==0:
         total_score = 3.5 * sms_score + 1.5 * monthly_income_score
     else:
-        total_score = 2 * sms_score + 1 * monthly_income_score + 1 * employment_history_score
+        total_score = 3 * sms_score + 1 * monthly_income_score + 1 * employment_history_score
 
     return total_score
 
 # Remove this before committing
-if __name__== "__main__":
-    data = {"sms_score":'10'}
-    json_data = json.dumps(data)
-    repayment_capacity_engine(json_data)
+# if __name__== "__main__":
+#     data = {"sms_score":'10'}
+#     json_data = json.dumps(data)
+#     repayment_capacity_engine(json_data)
     
+
 
