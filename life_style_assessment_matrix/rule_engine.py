@@ -17,7 +17,7 @@ def life_style_assesment_matrix_engine(user_data):
     with open(file_location) as json_file:
         data = json.load(json_file)
         for sub_data in data:
-            if user_id == int(sub_data['user_id']):
+            if int(user_id) == int(sub_data['user_id']):
                 user_exists = True
                 existing_user_data = sub_data
     if user_exists:
@@ -53,23 +53,23 @@ def create_new_user(user,max_id):
     if 'psychometric_test_score' in user:
         psychometric_test_score = user['psychometric_test_score']
     if 'social_media_score' in user :
-        if user['social_media_score']['facebook']:
-            facebook = user['social_media_score']['facebook']
-        if user['social_media_score']['twitter']:
-            twitter = user['social_media_score']['twitter']
-        if user['social_media_score']['linkdln']:
-            linkdln = user['social_media_score']['linkdln']
+        if 'facebook' in user['social_media_score'][0]:
+            facebook = user['social_media_score'][0]['facebook']
+        if 'twitter' in user['social_media_score'][0]:
+            twitter = user['social_media_score'][0]['twitter']
+        if 'linkdln' in user['social_media_score']:
+            linkdln = user['social_media_score'][0]['linkdln']
     social_media_dict['facebook']=facebook
     social_media_dict['twitter']=twitter
     social_media_dict['linkdln']=linkdln
     social_media_score.append(social_media_dict)
     if 'browsing_history' in user :
-        if user['browsing_history']['type_of_site']:
-            type_of_site = user['browsing_history']['type_of_site']
-        if user['browsing_history']['time_spent']:
-            time_spent = user['browsing_history']['time_spent']
-        if user['browsing_history']['frequency_of_visit']:
-            frequency_of_visit = user['browsing_history']['frequency_of_visit']
+        if 'type_of_site' in user['browsing_history'][0]:
+            type_of_site = user['browsing_history'][0]['type_of_site']
+        if 'time_spent' in user['browsing_history'][0]:
+            time_spent = user['browsing_history'][0]['time_spent']
+        if 'frequency_of_visit' in user['browsing_history'][0]:
+            frequency_of_visit = user['browsing_history'][0]['frequency_of_visit']
 
     browsing_history_dict['type_of_site']=type_of_site
     browsing_history_dict['time_spent']=time_spent
@@ -77,12 +77,12 @@ def create_new_user(user,max_id):
     browsing_history.append(browsing_history_dict)
 
     if 'app_history' in user:
-        if user['app_history']['type_of_site']:
-            app_type_site = user['app_history']['type_of_site']
-        if user['app_history']['time_spent']:
-            app_time_spent = user['app_history']['time_spent']
-        if user['app_history']['frequency_of_visit']:
-            app_frequency_of_visit = user['app_history']['frequency_of_visit']
+        if 'type_of_site' in user['app_history'][0]:
+            app_type_site = user['app_history'][0]['type_of_site']
+        if 'time_spent' in user['app_history'][0]:
+            app_time_spent = user['app_history'][0]['time_spent']
+        if 'frequency_of_visit' in user['app_history'][0]:
+            app_frequency_of_visit = user['app_history'][0]['frequency_of_visit']
     
     app_history_dict['type_of_site']=app_type_site
     app_history_dict['time_spent']=app_time_spent
@@ -112,18 +112,18 @@ def update_lsamatrix(user,new_data):
         psychometric_test_score = int(user['psychometric_test_score'])
 
     if 'social_media_score' in new_data :
-        if new_data['social_media_score']['facebook']:
-            facebook = new_data['social_media_score']['facebook']
+        if 'facebook' in new_data['social_media_score'][0]:
+            facebook = new_data['social_media_score'][0]['facebook']
         else:
-            facebook = user['social_media_score']['facebook']
-        if new_data['social_media_score']['twitter']:
-            twitter = new_data['social_media_score']['twitter']
+            facebook = user['social_media_score'][0]['facebook']
+        if 'twitter' in new_data['social_media_score'][0]:
+            twitter = new_data['social_media_score'][0]['twitter']
         else:
-            twitter = user['social_media_score']['twitter']
-        if new_data['social_media_score']['linkdln']:
-            linkdln = new_data['social_media_score']['linkdln']
+            twitter = user['social_media_score'][0]['twitter']
+        if 'linkdln' in new_data['social_media_score'][0]:
+            linkdln = new_data['social_media_score'][0]['linkdln']
         else:
-            linkdln = user['social_media_score']['linkdln']
+            linkdln = user['social_media_score'][0]['linkdln']
         social_media_dict = {}
         social_media_dict['facebook']=facebook
         social_media_dict['twitter']=twitter
@@ -133,18 +133,18 @@ def update_lsamatrix(user,new_data):
         social_media_score = user['social_media_score']
 
     if 'browsing_history' in new_data :
-        if new_data['browsing_history']['type_of_site']:
-            type_of_site = new_data['browsing_history']['type_of_site']
+        if 'type_of_site' in new_data['browsing_history'][0]:
+            type_of_site = new_data['browsing_history'][0]['type_of_site']
         else:
-            type_of_site = user['browsing_history']['type_of_site']
-        if new_data['browsing_history']['time_spent']:
-            time_spent = new_data['browsing_history']['time_spent']
+            type_of_site = user['browsing_history'][0]['type_of_site']
+        if 'time_spent' in new_data['browsing_history'][0]:
+            time_spent = new_data['browsing_history'][0]['time_spent']
         else:
-            time_spent = user['browsing_history']['time_spent']
-        if new_data['browsing_history']['frequency_of_visit']:
-            frequency_of_visit = new_data['browsing_history']['frequency_of_visit']
+            time_spent = user['browsing_history'][0]['time_spent']
+        if 'frequency_of_visit' in new_data['browsing_history'][0]:
+            frequency_of_visit = new_data['browsing_history'][0]['frequency_of_visit']
         else:
-            frequency_of_visit = user['browsing_history']['frequency_of_visit']
+            frequency_of_visit = user['browsing_history'][0]['frequency_of_visit']
         browsing_history_dict = {}
         browsing_history_dict['type_of_site']=type_of_site
         browsing_history_dict['time_spent']=time_spent
@@ -154,18 +154,18 @@ def update_lsamatrix(user,new_data):
         browsing_history = user['browsing_history']
 
     if 'app_history' in new_data:
-        if new_data['app_history']['type_of_site']:
-            app_type_site = new_data['app_history']['type_of_site']
+        if 'type_of_site' in new_data['app_history'][0]:
+            app_type_site = new_data['app_history'][0]['type_of_site']
         else:
-            app_type_site = user['app_history']['type_of_site']
-        if new_data['app_history']['time_spent']:
-            app_time_spent = new_data['app_history']['time_spent']
+            app_type_site = user['app_history'][0]['type_of_site']
+        if 'time_spent' in new_data['app_history'][0]:
+            app_time_spent = new_data['app_history'][0]['time_spent']
         else:
-            app_time_spent = user['app_history']['time_spent']
-        if new_data['app_history']['frequency_of_visit']:
-            app_frequency_of_visit = new_data['app_history']['frequency_of_visit']
+            app_time_spent = user['app_history'][0]['time_spent']
+        if 'frequency_of_visit' in new_data['app_history'][0]   :
+            app_frequency_of_visit = new_data['app_history'][0]['frequency_of_visit']
         else:
-            app_frequency_of_visit = user['app_history']['frequency_of_visit']
+            app_frequency_of_visit = user['app_history'][0]['frequency_of_visit']
         
         app_history_dict = {}
         app_history_dict['type_of_site']=app_type_site
@@ -191,7 +191,7 @@ def update_lsamatrix(user,new_data):
     for sub_data in feeds:
         if new_user['user_id'] == sub_data['user_id']:
             feeds.remove(sub_data)
-            print("deleted sub data")
+
 
     feeds.append(new_user)
     with open(file_location, mode='w') as json_file:
@@ -214,36 +214,37 @@ def calculate_lsamatrix(user):
     app_history = 0
     total_score = 0
 
+    print(user)
     if 'psychometric_test_score' in user:
         psychometric_test_score = int(user['psychometric_test_score'])
 
     if 'social_media_score' in user :
-        if 'facebok' in user['social_media_score']:
-            facebook = user['social_media_score']['facebook']
+        if 'facebook' in user['social_media_score'][0]:
+            facebook = int(user['social_media_score'][0]['facebook'])
         if 'twitter' in user['social_media_score']:
-            twitter = user['social_media_score']['twitter']
+            twitter = int(user['social_media_score'][0]['twitter'])
         if 'linkdln' in user['social_media_score']:
-            linkdln = user['social_media_score']['linkdln']
-    social_media_score = int(facebook + twitter + linkdln)    
+            linkdln = int(user['social_media_score'][0]['linkdln'])
+    social_media_score = (facebook + twitter + linkdln)    
 
     if 'browsing_history' in user :
-        if type_of_site in user['browsing_history']:
-            type_of_site = user['browsing_history']['type_of_site']
-        if 'time_spent' in user['browsing_history']:
-            time_spent = user['browsing_history']['time_spent']
-        if 'frequency_of_visit' in user['browsing_history']:
-            frequency_of_visit = user['browsing_history']['frequency_of_visit']
-    browsing_history = int(type_of_site + time_spent + frequency_of_visit)
+        if type_of_site in user['browsing_history'][0]:
+            type_of_site = int(user['browsing_history'][0]['type_of_site'])
+        if 'time_spent' in user['browsing_history'][0]:
+            time_spent = int(user['browsing_history'][0]['time_spent'])
+        if 'frequency_of_visit' in user['browsing_history'][0]:
+            frequency_of_visit = int(user['browsing_history'][0]['frequency_of_visit'])
+    browsing_history = (type_of_site + time_spent + frequency_of_visit)
 
     if 'app_history' in user:
-        if 'type_of_site' in user['app_history']:
-            app_type_site = user['app_history']['type_of_site']
-        if 'time_spent' in user['app_history']:
-            app_time_spent = user['app_history']['time_spent']
-        if 'frequency_of_visit' in user['app_history']:
-            app_frequency_of_visit = user['app_history']['frequency_of_visit']
-    app_history = int(app_type_site + app_time_spent + app_frequency_of_visit)
-    
+        if 'type_of_site' in user['app_history'][0]:
+            app_type_site = int(user['app_history'][0]['type_of_site'])
+        if 'time_spent' in user['app_history'][0]:
+            app_time_spent = int(user['app_history'][0]['time_spent'])
+        if 'frequency_of_visit' in user['app_history'][0]:
+            app_frequency_of_visit = int(user['app_history'][0]['frequency_of_visit'])
+    app_history = app_type_site + app_time_spent + app_frequency_of_visit
+
     if social_media_score==0 and browsing_history==0 and app_history==0:
         total_score = 5 * psychometric_test_score
     elif social_media_score==0 and browsing_history==0:
