@@ -150,8 +150,96 @@ def update_rcamatrix(user):
     pass
 
 def calculate_rcamatrix(user):
+    average_amount_score = 0
+    defaulter_score = 0
+    tax_filing_score =0
+    monthly_income_score = 0
+    employment_history_score = 0
+    educational_background_score = 0
+    sms_score = 0
+    email_score = 0
+    demographic_based_score = 0
+    health_insurance_score = 0
+    vehicle_insurance_score = 0
+    eletricity_utility_score = 0
+    gas_utility_score = 0
+    internet_utility_score = 0
+    utility_score = 0
+    insurance_score = 0
+    total_score = 0
+
+    if 'tax_filing_score' in user:
+        tax_filing_score = int(user['tax_filing_score'])
+    if 'monthly_income_score' in user:
+        monthly_income_score = int(user['monthly_income_score'])
+    if 'employment_history_score' in user:
+        employment_history_score = int(user['employment_history_score'])
+    if 'educational_background_score' in user:
+        educational_background_score = int(user['educational_background_score'])
+    if 'sms_score' in user:
+        sms_score = int(user['sms_score'])
+    if 'email_score' in user:
+        email_score = int(user['email_score'])
+    if 'demographic_based_score' in user:
+        demographic_based_score = int(user['demographic_based_score'])
+
+    if 'insurance_score' in user :
+        if user['insurance_score']['vehicle_insurance_score']:
+            if user['insurance_score']['vehicle_insurance_score']['defaulter_score']:
+                defaulter_score = user['insurance_score']['vehicle_insurance_score']['defaulter_score']
+            if user['insurance_score']['vehicle_insurance_score']['average_amount_score']:
+                average_amount_score = user['insurance_score']['vehicle_insurance_score']['average_amount_score']
+            vehicle_insurance_score = int(defaulter_score+average_amount_score)
+            defaulter_score = 0
+            average_amount_score = 0
+        if user['insurance_score']['health_insurance_score']:
+            if user['insurance_score']['health_insurance_score']['defaulter_score']:
+                defaulter_score = user['insurance_score']['health_insurance_score']['defaulter_score']
+            if user['insurance_score']['health_insurance_score']['average_amount_score']:
+                average_amount_score = user['insurance_score']['health_insurance_score']['average_amount_score']
+            health_insurance_score = int(defaulter_score+average_amount_score)
+            defaulter_score = 0
+            average_amount_score = 0
+    insurance_score = int(vehicle_insurance_score + health_insurance_score)    
+
+
+    if 'utility_score' in user :
+        if user['utility_score']['internet_utility_score']:
+            if user['utility_score']['internet_utility_score']['defaulter_score']:
+                defaulter_score = user['utility_score']['internet_utility_score']['defaulter_score']
+            if user['utility_score']['internet_utility_score']['average_amount_score']:
+                average_amount_score = user['utility_score']['internet_utility_score']['average_amount_score']
+            internet_utility_score = int(defaulter_score+average_amount_score)
+            defaulter_score = 0
+            average_amount_score = 0
+        if user['utility_score']['gas_utility_score']:
+            if user['utility_score']['gas_utility_score']['defaulter_score']:
+                defaulter_score = user['utility_score']['gas_utility_score']['defaulter_score']
+            if user['utility_score']['gas_utility_score']['average_amount_score']:
+                average_amount_score = user['utility_score']['gas_utility_score']['average_amount_score']
+            gas_utility_score = int(defaulter_score+average_amount_score)
+            defaulter_score = 0
+            average_amount_score = 0
+        if user['utility_score']['eletricity_utility_score']:
+            if user['utility_score']['eletricity_utility_score']['defaulter_score']:
+                defaulter_score = user['utility_score']['eletricity_utility_score']['defaulter_score']
+            if user['utility_score']['eletricity_utility_score']['average_amount_score']:
+                average_amount_score = user['utility_score']['eletricity_utility_score']['average_amount_score']
+            eletricity_utility_score = int(defaulter_score+average_amount_score)
+    utility_score = int(gas_utility_score + internet_utility_score + eletricity_utility_score)    
+
     
-    pass
+    if sms_score==0 and employment_history_score==0:
+        total_score = 5 * monthly_income_score
+    elif sms_score==0:
+        total_score = 2.5 * monthly_income_score + 2.5 * employment_history_score
+    elif employment_history_score==0:
+        total_score = 3.5 * sms_score + 1.5 * monthly_income_score
+    else:
+        total_score = 2 * sms_score + 1 * monthly_income_score + 1 * employment_history_score
+
+    return total_score
+
 # Remove this before committing
 if __name__== "__main__":
     data = {"sms_score":'10'}
